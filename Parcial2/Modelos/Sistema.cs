@@ -46,15 +46,15 @@ namespace Parcial2.Modelos
             StreamWriter sw = new StreamWriter(archivo);
             try
             {
-                Camion camionARetirar = listaCamiones[posicion];
-                string[] carga= camionARetirar.VerCarga();
+                string[] carga = VerCargaCamion(posicion);
 
                 foreach (string paquete in carga)
                 {
                     sw.WriteLine(paquete);
                 }
 
-                listaCamiones.Remove(camionARetirar);
+                //no entendi bien si se debia eliminar el camion de la lista o no
+                //listaCamiones.Remove(listaCamiones[posicion]);
             }
             catch (Exception ex)
             {
@@ -103,7 +103,8 @@ namespace Parcial2.Modelos
         public string[] VerCargaCamion(int posicion)
         {
             Camion camionSeleccionado = listaCamiones[posicion];//en el examen lo hice con foreach pero no es necesario
-            return camionSeleccionado.VerCarga();
+            string[] carga = camionSeleccionado.VerCarga();
+            return carga;
         }
 
 
