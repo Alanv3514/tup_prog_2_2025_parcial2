@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2.Modelos
 {
+    [Serializable]
     public class Camion
     {
         private double pesoControl = 0;

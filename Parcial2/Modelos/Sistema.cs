@@ -7,11 +7,19 @@ using System.Threading.Tasks;
 
 namespace Parcial2.Modelos
 {
+    [Serializable]
     public class Sistema
     {
         public List<Camion> listaCamiones = new List<Camion>();
         public List<Paquete> listaPaquetes = new List<Paquete>();
-        public Sistema() { }
+        public Sistema() {
+        //esto en el examen no lo puse pero tendria que haber hardcodeado unos camiones
+            Camion camion1 = new Camion("ABC123", 1000);
+            Camion camion2 = new Camion("DEF456", 200);
+            Camion camion3 = new Camion("GHI789", 500);
+
+
+        }
 
         public string[] CamionesCargados()
         {
@@ -65,7 +73,7 @@ namespace Parcial2.Modelos
                 sw.Close();
             }
         }
-        public double CargarPAquete (int posicion, Paquete paquete)
+        public double CargarPaquete (int posicion, Paquete paquete)
         {
             double ret = 0;
             Camion camionSeleccionado = listaCamiones[posicion];//en el examen lo hice con foreach pero no es necesario
